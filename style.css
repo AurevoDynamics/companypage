@@ -253,3 +253,11 @@ footer {
     border-top: 1px solid #30363d;
     color: #8b949e;
 }
+section {
+    opacity: 0;
+    transform: translateY(30px);
+}
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
