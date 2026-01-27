@@ -195,3 +195,88 @@ footer {
     border-top: 1px solid #30363d;
     color: #8b949e;
 } 
+/* -------------------------- Section Styling -------------------------- */
+section {
+    margin-bottom: 80px;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* -------------------------- Technology -------------------------- */
+.technology,
+.architecture {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+.technology p,
+.architecture p {
+    max-width: 900px;
+    margin: auto;
+    color: #8b949e;
+    font-size: 1.05rem;
+}
+
+/* -------------------------- Innovation Cards -------------------------- */
+.innovation {
+    width: 90%;
+    margin: auto;
+}
+
+.innovation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: #161b22;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #30363d;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(88, 166, 255, 0.15);
+}
+
+.card h3 {
+    color: #58a6ff;
+    margin-bottom: 12px;
+}
+
+/* -------------------------- Applications -------------------------- */
+.applications {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+.applications ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.applications li {
+    margin: 10px 0;
+    color: #c9d1d9;
+}
+
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
