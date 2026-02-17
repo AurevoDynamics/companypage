@@ -146,7 +146,8 @@ letter-spacing: -1px;
 color: #ffffff;
 }
 .hero p {
-font-size: 1.2rem;
+font-size: 1.4rem;
+font-weight: 500;
 color: #8b949e;
 }
 .hero::before {
@@ -179,14 +180,6 @@ margin: 0 auto;
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 gap: 30px;
-}
-
-.card {
-background-color: #0d1117;
-padding: 28px;
-border-radius: 12px;
-border: 1px solid #30363d;
-transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card {
