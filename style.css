@@ -7,6 +7,17 @@
 }
 
 /* ====================== BODY ====================== */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: -1;
+}
 body {
     background-color: #0d1117;
     color: #c9d1d9;
@@ -110,29 +121,45 @@ header nav ul li a:hover::after {
 
 /* ====================== HERO ====================== */
 .hero {
+    position: relative;
     width: 100%;
     max-width: none;
-    min-height: 80vh;
-    margin: 0 0 120px 0;
+    min-height: 100vh;
+    margin: 0;
     padding: 0 20px;
-    background: linear-gradient(135deg, #0d1117, #161b22);
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    overflow: hidden;
+    background: radial-gradient(circle at 30% 40%, rgba(88,166,255,0.12), transparent 40%),
+                radial-gradient(circle at 70% 60%, rgba(0,255,180,0.06), transparent 40%),
+                #0d1117;
 }
 
 .hero h2 {
-    font-size: 3rem;
+    font-size: clamp(3rem, 6vw, 4.5rem);
     font-weight: 700;
-    margin-bottom: 20px;
+    letter-spacing: -1px;
+    color: #ffffff;
 }
-
 .hero p {
     font-size: 1.2rem;
     color: #8b949e;
 }
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(13,17,23,0.6), rgba(13,17,23,0.95));
+    z-index: 0;
+}
 
+.hero h2,
+.hero p {
+    position: relative;
+    z-index: 1;
+}
 /* ====================== TECHNOLOGY / ARCHITECTURE ====================== */
 .technology,
 .architecture {
@@ -160,9 +187,16 @@ header nav ul li a:hover::after {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.card {
+    background-color: #11161c;
+    border: 1px solid #1f2933;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
 .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 30px rgba(88, 166, 255, 0.18);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(88,166,255,0.15);
+    border: 1px solid rgba(88,166,255,0.4);
 }
 
 .card h3 {
@@ -266,4 +300,31 @@ footer {
 section {
     opacity: 1;
     transform: none;
+}
+.about,
+.architecture,
+.team,
+.contact {
+    background: #11161c;
+    border-radius: 20px;
+}
+section {
+    margin: 0 auto 160px auto;
+    padding: 100px 50px;
+}
+.cta-btn {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 14px 30px;
+    background: #58a6ff;
+    color: #0d1117;
+    font-weight: 600;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+    background: #79c0ff;
+    transform: translateY(-3px);
 }
